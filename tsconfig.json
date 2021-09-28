@@ -4,6 +4,12 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
+    "paths": {
+      "ecoomerecelib": [
+        "dist/ecoomerecelib/ecoomerecelib",
+        "dist/ecoomerecelib"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
