@@ -1,0 +1,58 @@
+<form novalidate [formGroup]="signupForm" style="padding: 1rem;">
+    <div class="row">
+        <div class="col">
+        </div>
+      <div id="login-container" class="mat-elevation-z8 col-5">
+          <h2 class="primary">Create an Account</h2>
+  
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="First Name" formControlName="firstName" required>
+              <mat-error *ngIf="signupForm.controls['firstName'].hasError('required')">
+                  Please enter first name
+              </mat-error>
+  
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="Last Name" formControlName="lastName" required>
+              <mat-error *ngIf="signupForm.controls['lastName'].hasError('required')">
+                  Please enter last name
+              </mat-error>
+  
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email address" formControlName="email" required>
+              <mat-error *ngIf="signupForm.controls['email'].hasError('required')">
+                  Please enter email id
+              </mat-error>
+  
+          </mat-form-field>
+  
+          <mat-form-field>
+              <input matInput placeholder="Password" type="password" formControlName="password"
+                  required>
+              <mat-error *ngIf="signupForm.controls['password'].hasError('required')">
+                  Please enter password
+              </mat-error>
+          </mat-form-field>
+  
+          <div>
+              <button mat-raised-button type="button" class="Sign-Up-btn">Sign Up</button>
+              <button mat-raised-button type="submit" color="primary" class="Login-btn" (click)="redirectToLogin()">Login</button>
+          </div>
+<!--   
+          <div class="footer-sec">
+              <br>
+              <br>
+              <hr>
+              <a class="primary">Forgot Password?</a>
+              <br>
+          </div>
+   -->
+      </div>
+      <div class="col">
+      </div>
+  
+    </div>
+    
+</form>

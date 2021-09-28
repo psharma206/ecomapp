@@ -1,0 +1,40 @@
+<mat-toolbar [color]="opts.color ? opts.color : 'primary'" [ngClass]="{'mat-elevation-z3': opts.hasEl}" style="position: fixed;">
+    <button mat-icon-button (click)="toggleSidenav()" *ngIf="opts.sidenav">
+        <mat-icon>menu</mat-icon>
+    </button>
+    {{opts.title}}
+    <span fxFlex></span>
+
+    <a mat-icon-button [href]="url" target="_blank" matTooltip="Open in new tab">
+        <mat-icon>
+            <!-- <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                />
+            </svg> -->
+            <span class="material-icons">
+                inventory_2
+            </span>
+        </mat-icon>
+        <span>
+            Products
+            <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+        </span>
+    </a>
+    <span fxFlex></span>
+    <a mat-icon-button [href]="url" target="_blank" matTooltip="Open in new tab">
+        <mat-icon>
+            shopping_cart
+        </mat-icon>
+    </a>
+    <a mat-icon-button target="_blank" matTooltip="Back to question">
+        <mat-icon>
+            logout
+        </mat-icon>
+    </a>
+    <a mat-icon-button  matTooltip="Login" (click)="login()">
+        <mat-icon>
+            login
+        </mat-icon>
+        <!-- <mat-hint>Login</mat-hint> -->
+    </a>
+</mat-toolbar>
