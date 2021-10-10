@@ -1,0 +1,6 @@
+{
+  "debugging": true,
+  "API_ENDPOINTS": {
+    "CLAIMSERVER": "https://threechipmunksapi.herokuapp.com/"
+  }
+}

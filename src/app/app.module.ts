@@ -2,7 +2,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -22,22 +22,47 @@ import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { LocalStorageModule } from 'angular-2-local-storage';
+import { AppInitializer } from './app-initializer.service';
+import { FooterComponent } from './footer/footer.component';
+
+export function startupServiceFactory(startupService: AppInitializer) {
+  return (): Promise<any> => {
+    return startupService.loadConfig();
+  };
+}
+
 
 @NgModule({
   declarations: [AppComponent, ItemdetailsComponent,
      DashboardComponent, 
-    ItemComponent, ItemlistComponent, HomeComponent, SignupComponent, LoginComponent],
+    ItemComponent, ItemlistComponent, HomeComponent, SignupComponent, LoginComponent, FooterComponent],
   imports: [BrowserModule, BrowserAnimationsModule,
-    EcommerceModule.forRoot(),
+    MatFormFieldModule,
+    MatSlideToggleModule,
+    MatFormFieldModule,
     ReactiveFormsModule,
     FlexLayoutModule, NavbarModule,
     MatInputModule, MatSlideToggleModule,
     MatIconModule, MatButtonModule, 
+    EcommerceModule.forRoot(),
     MatSelectModule,
     MatDialogModule, ModalModule
     , MatCardModule,
-    AppRoutingModule],
-  providers: [],
+    AppRoutingModule,
+    LocalStorageModule.forRoot({
+      prefix: 'threechipmunks.com',
+      storageType: 'localStorage'
+    })],
+  providers: [AppInitializer,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: startupServiceFactory,
+      deps: [AppInitializer],
+      multi: true
+
+    }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

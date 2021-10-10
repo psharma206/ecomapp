@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DashboardService } from './dashboard.service';
 
 @Component({
   selector: 'ecommerce-dashboard',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  productList: any = [];
 
-  constructor() { }
+  constructor(private service: DashboardService) { }
 
   ngOnInit(): void {
+    this.service.getProductList().subscribe((response) =>{
+      this.productList = response;
+    })
   }
 
 }
