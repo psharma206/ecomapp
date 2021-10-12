@@ -26,6 +26,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { LocalStorageModule } from 'angular-2-local-storage';
 import { AppInitializer } from './app-initializer.service';
 import { FooterComponent } from './footer/footer.component';
+import { DxashComponent } from './dxash/dxash.component';
+import { MenubarModule } from 'projects/ecoomerecelib/src/lib/menubar/menubar.module';
 
 export function startupServiceFactory(startupService: AppInitializer) {
   return (): Promise<any> => {
@@ -37,9 +39,10 @@ export function startupServiceFactory(startupService: AppInitializer) {
 @NgModule({
   declarations: [AppComponent, ItemdetailsComponent,
      DashboardComponent, 
-    ItemComponent, ItemlistComponent, HomeComponent, SignupComponent, LoginComponent, FooterComponent],
+    ItemComponent, ItemlistComponent, HomeComponent, SignupComponent, LoginComponent, FooterComponent, DxashComponent],
   imports: [BrowserModule, BrowserAnimationsModule,
     MatFormFieldModule,
+    MenubarModule,
     MatSlideToggleModule,
     MatFormFieldModule,
     ReactiveFormsModule,

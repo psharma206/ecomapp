@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DxashComponent } from './dxash/dxash.component';
 import { HomeComponent } from './home/home.component';
 import { ItemComponent } from './item/item.component';
 import { ItemdetailsComponent } from './itemDetails/itemdetails/itemdetails.component';
@@ -12,7 +13,8 @@ import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent, children: [{ path: 'dash', component: DashboardComponent }] },
+  { path: 'home', component: HomeComponent, children: [{ path: 'dash', component: DashboardComponent },
+  { path: 'about', component: DxashComponent }] },
   { path: 'itemslist', component: ItemlistComponent },
   { path: 'items', component: ItemComponent },
   { path: 'itemdetail', component: ItemdetailsComponent },
