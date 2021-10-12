@@ -1,21 +1,24 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-dxash',
   templateUrl: './dxash.component.html',
   styleUrls: ['./dxash.component.scss']
 })
-export class DxashComponent implements OnInit {
-  @ViewChild('aboutvideo') aboutvideo: ElementRef;
+export class DxashComponent implements OnInit, AfterViewInit {
 
   constructor() { }
 
   ngOnInit(): void {
+    let a: any = document.getElementById("aboutvideo");
+    a.play();
   }
+
   ngAfterViewInit() {
-    setTimeout(() => {
-      this.aboutvideo.nativeElement?.play();      
-    }, 0);
+    let a: any = document.getElementById("aboutvideo");
+    a.play();
+    
+
   }
 
 }
