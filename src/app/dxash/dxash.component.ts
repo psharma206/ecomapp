@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-dxash',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dxash.component.scss']
 })
 export class DxashComponent implements OnInit {
+  @ViewChild('aboutvideo') aboutvideo: ElementRef;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+  ngAfterViewInit() {
+    this.aboutvideo.nativeElement?.play();
   }
 
 }

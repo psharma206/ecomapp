@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DashboardService } from './dashboard.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { DashboardService } from './dashboard.service';
 })
 export class DashboardComponent implements OnInit {
   productList: any = [];
+  @ViewChild('dashvideo') dashvideo: ElementRef;
 
   constructor(private service: DashboardService) { }
 
@@ -15,6 +16,10 @@ export class DashboardComponent implements OnInit {
     this.service.getProductList().subscribe((response) =>{
       this.productList = response;
     })
+
   }
 
+  ngAfterViewInit() {
+    this.dashvideo.nativeElement?.play();
+  }
 }
