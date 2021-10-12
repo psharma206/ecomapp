@@ -13,7 +13,9 @@ export class DxashComponent implements OnInit {
   ngOnInit(): void {
   }
   ngAfterViewInit() {
-    this.aboutvideo.nativeElement?.play();
+    setTimeout(() => {
+      this.aboutvideo.nativeElement?.play();      
+    }, 0);
   }
 
 }
