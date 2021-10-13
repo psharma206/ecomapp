@@ -11,13 +11,15 @@ export class DxashComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     let a: any = document.getElementById("aboutvideo");
+    a.muted = true;
     a.play();
   }
 
   ngAfterViewInit() {
     let a: any = document.getElementById("aboutvideo");
+    a.muted = true;
     a.play();
-    
+
 
   }
 
