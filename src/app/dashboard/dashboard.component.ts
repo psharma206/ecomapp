@@ -8,7 +8,6 @@ import { DashboardService } from './dashboard.service';
 })
 export class DashboardComponent implements OnInit {
   productList: any = [];
-  @ViewChild('dashvideo') dashvideo: ElementRef;
 
   constructor(private service: DashboardService) { }
 
@@ -16,10 +15,15 @@ export class DashboardComponent implements OnInit {
     this.service.getProductList().subscribe((response) =>{
       this.productList = response;
     })
+    let a: any = document.getElementById("dashvideo");
+    a.muted = true;
+    a.play();
 
   }
 
   ngAfterViewInit() {
-    this.dashvideo.nativeElement?.play();
+    let a: any = document.getElementById("dashvideo");
+    a.muted = true;
+    a.play();
   }
 }
