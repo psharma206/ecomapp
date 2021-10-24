@@ -1,9 +1,9 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { IRequest, EMethod, IConfig} from '../modal/configuration.model';
+import { IRequest, EMethod, IConfig } from '../modal/configuration.model';
 import { HttpcallService } from '../httpconfiguration/httpcall.service';
 import { ConfigurationsetupService } from '../services/startup/configurationsetup.service';
-  import { ServiceRequest } from '../service-resource.constant';
+import { ServiceRequest } from '../service-resource.constant';
 
 @Injectable({
   providedIn: 'root'

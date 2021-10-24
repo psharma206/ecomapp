@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-md-3">
+        Name : {{attendanceRecord.name}}
+    </div>
+    <div class="col-md-3">
+        First Name : {{attendanceRecord.firstName}}
+    </div>
+    <div class="col-md-3">
+        Middle Name : {{attendanceRecord.middleName}}
+    </div>
+    <div class="col-md-3">
+        Last Name : {{attendanceRecord.lastName}}
+    </div>
+</div>
+<br/>
+<br/>
+<div class="row"></div>
+<div class="row">
+    <div class="col-md-3">
+        <span><b>Please Sign here:</b></span>
+    </div>
+    <div class="col-md-6" style="border: .1rem solid;">
+
+        <signature-pad [attr.id]="recordId" [options]="signaturePadOptions" (onBeginEvent)="drawStart()"
+            (onEndEvent)="drawComplete()">
+        </signature-pad>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+<br/>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+        <button (click)="drawClear()" mat-raised-button>Clear</button>
+
+    </div>
+    <div class="col-md-3">
+        <button (click)="submitAttendance()" mat-raised-button>Submit Attendance</button>
+
+    </div>
+
+    <div class="col-md-3"></div>
+
+</div>

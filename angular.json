@@ -156,6 +156,127 @@
           }
         }
       }
+    },
+    "attendancerecorderapp": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/attendancerecorderapp",
+      "sourceRoot": "projects/attendancerecorderapp/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/attendancerecorderapp",
+            "index": "projects/attendancerecorderapp/src/index.html",
+            "main": "projects/attendancerecorderapp/src/main.ts",
+            "polyfills": "projects/attendancerecorderapp/src/polyfills.ts",
+            "tsConfig": "projects/attendancerecorderapp/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/attendancerecorderapp/src/favicon.ico",
+              "projects/attendancerecorderapp/src/assets"
+            ],
+            "styles": [
+              "projects/attendancerecorderapp/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/attendancerecorderapp/src/environments/environment.ts",
+                  "with": "projects/attendancerecorderapp/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "attendancerecorderapp:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "attendancerecorderapp:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "attendancerecorderapp:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/attendancerecorderapp/src/test.ts",
+            "polyfills": "projects/attendancerecorderapp/src/polyfills.ts",
+            "tsConfig": "projects/attendancerecorderapp/tsconfig.spec.json",
+            "karmaConfig": "projects/attendancerecorderapp/karma.conf.js",
+            "assets": [
+              "projects/attendancerecorderapp/src/favicon.ico",
+              "projects/attendancerecorderapp/src/assets"
+            ],
+            "styles": [
+              "projects/attendancerecorderapp/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/attendancerecorderapp/tsconfig.app.json",
+              "projects/attendancerecorderapp/tsconfig.spec.json",
+              "projects/attendancerecorderapp/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/attendancerecorderapp/e2e/protractor.conf.js",
+            "devServerTarget": "attendancerecorderapp:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "attendancerecorderapp:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-heroku",
