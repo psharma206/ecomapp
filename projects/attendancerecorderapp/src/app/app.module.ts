@@ -22,6 +22,7 @@ import { LocalStorageModule } from 'angular-2-local-storage';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { ChartsModule } from 'ng2-charts';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ToastrModule } from 'ngx-toastr';
 
 // import { DashboardComponent } from 'src/app/dashboard/dashboard.component';
 
@@ -44,6 +45,7 @@ export function startupServiceFactory(startupService: AppInitializer) {
     SignaturePadModule,
     EcommerceModule.forRoot(),
     FormsModule,
+    ToastrModule.forRoot(),
     HttpClientModule,
     MatNativeDateModule,
     FormsModule,

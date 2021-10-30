@@ -69,10 +69,15 @@ export class RecordsignatureComponent implements OnInit {
   }
   submitAttendance() {
     if (this.isExternal && this.centerSelectedValue == '') {
-      return false;
       this.messageService.Error('Please select center');
-      this.attendanceRecord.city = this.centerSelectedValue;
+      return false;
     }
+    var esign = this.signaturePad.toData();
+    if (esign == null || esign.length <= 0) {
+      this.messageService.Error('Please enter signature');
+      return false;
+    }
+    this.attendanceRecord.city = this.centerSelectedValue;
 
     this.attendanceRecord.isAttendanceRecorded = true;
 
