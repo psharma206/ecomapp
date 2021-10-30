@@ -24,6 +24,13 @@ export class AttendancerecorderService {
     };
     return this._reqResource.productResource(_request);
   }
+  getAttendanceInquiry(): Observable<any> {
+    const _request: IRequest = {
+      url: 'products/attendancelist/inquiry',
+      methodtype: EMethod.GET
+    };
+    return this._reqResource.productResource(_request);
+  }
   submitAttendance(id: number, record): Observable<any> {
     const _request: IRequest = {
       url: 'products/saveattendance/' + id,

@@ -1,7 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AttendancerecorderService } from '../attendancerecorder.service';
 
 
@@ -114,12 +114,15 @@ const ELEMENT_DATA = [
 })
 export class AttendanceComponent implements OnInit {
   columnsToDisplay = ['name', 'isAttendanceRecorded', 'firstName', 'middleName', 'lastName', 'age', 'city', 'state'];
-
+  totalCount = 0;
   dataSource: MatTableDataSource<PeriodicElement>;
   data = ELEMENT_DATA;
   expandedElement: any;
+  searchValue = '';
 
-  constructor(private router: Router, private attendancerecorderService: AttendancerecorderService) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router, private attendancerecorderService: AttendancerecorderService) {
 
   }
 
@@ -127,16 +130,24 @@ export class AttendanceComponent implements OnInit {
     this.router.navigate(['/attendance/esignature', row.attendanceId]);
   }
   ngOnInit(): void {
-    debugger;
-  this.attendancerecorderService.getProductList().subscribe((response) => {
-    this.dataSource = new MatTableDataSource(response);
-  })
+    this.route.params.subscribe((params: Params) => {
+      let isExternalUser = (params['center'] != undefined && params['center'] != null) ? 'true': 'false';
+      window.sessionStorage.setItem('isExternalUser', isExternalUser);
+    });
+
+   
+    this.attendancerecorderService.getProductList().subscribe((response) => {
+      this.dataSource = new MatTableDataSource(response);
+      this.totalCount = response.length;
+    })
   }
 
   applyFilter(filterValue: string) {
+    this.searchValue = filterValue.trim();
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
     this.dataSource.filter = filterValue;
+    // this.totalCount
   }
 
   isExpansionDetailRow = (i: number, row: Object) => row.hasOwnProperty('detailRow');

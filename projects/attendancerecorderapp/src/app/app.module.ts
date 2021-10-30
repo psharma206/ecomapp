@@ -1,4 +1,4 @@
- import { APP_INITIALIZER, NgModule, } from '@angular/core';
+import { APP_INITIALIZER, NgModule, } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -19,6 +19,11 @@ import { RecordsignatureComponent } from './recordsignature/recordsignature.comp
 import { EcommerceModule } from 'projects/ecoomerecelib/src/public-api';
 import { AppInitializer } from 'src/app/app-initializer.service';
 import { LocalStorageModule } from 'angular-2-local-storage';
+import { MatSelect, MatSelectModule } from '@angular/material/select';
+import { ChartsModule } from 'ng2-charts';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+// import { DashboardComponent } from 'src/app/dashboard/dashboard.component';
 
 export function startupServiceFactory(startupService: AppInitializer) {
   return (): Promise<any> => {
@@ -30,7 +35,7 @@ export function startupServiceFactory(startupService: AppInitializer) {
   declarations: [
     AppComponent,
     AttendanceComponent,
-
+    DashboardComponent,
     RecordsignatureComponent
   ],
   imports: [
@@ -47,13 +52,15 @@ export function startupServiceFactory(startupService: AppInitializer) {
       storageType: 'localStorage'
     }),
     ReactiveFormsModule,
+    ChartsModule,
     MatIconModule,
     MatPaginatorModule,
     MatTableModule,
     MatInputModule,
     MatFormFieldModule,
     AppRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule
   ],
   providers: [AppInitializer,
     {
