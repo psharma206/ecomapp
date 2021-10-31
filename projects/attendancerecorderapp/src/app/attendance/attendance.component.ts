@@ -16,7 +16,7 @@ export interface PeriodicElement {
   age: number;
   isAttendanceRecorded: boolean;
   phone: string;
-  designation;
+  designation: string;
 }
 
 const ELEMENT_DATA = [
