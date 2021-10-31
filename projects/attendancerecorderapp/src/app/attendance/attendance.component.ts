@@ -115,7 +115,7 @@ const ELEMENT_DATA = [
   ]
 })
 export class AttendanceComponent implements OnInit {
-  columnsToDisplay = ['name', 'isAttendanceRecorded', 'firstName', 'middleName', 'lastName', 'age', 'city', 'state'];
+  columnsToDisplay = ['name','designation', 'isAttendanceRecorded', 'firstName', 'middleName', 'lastName', 'age', 'city', 'state'];
   totalCount = 0;
   dataSource: MatTableDataSource<PeriodicElement>;
   data = ELEMENT_DATA;
