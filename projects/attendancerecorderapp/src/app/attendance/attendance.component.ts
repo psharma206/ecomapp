@@ -13,7 +13,6 @@ export interface PeriodicElement {
   middleName: string;
   city: string;
   state: string;
-  age: number;
   isAttendanceRecorded: boolean;
   phone: string;
   designation: string;
@@ -115,7 +114,7 @@ const ELEMENT_DATA = [
   ]
 })
 export class AttendanceComponent implements OnInit {
-  columnsToDisplay = ['name','designation', 'isAttendanceRecorded', 'firstName', 'middleName', 'lastName', 'age', 'city', 'state'];
+  columnsToDisplay = ['name','designation', 'isAttendanceRecorded', 'firstName', 'middleName', 'lastName', 'city', 'state'];
   totalCount = 0;
   dataSource: MatTableDataSource<PeriodicElement>;
   data = ELEMENT_DATA;
