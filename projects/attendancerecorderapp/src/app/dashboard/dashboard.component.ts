@@ -23,6 +23,7 @@ export class DashboardComponent implements OnInit {
   public pieChartPlugins = [];
   totalCount = 0;
   totalCountPresent = 0;
+  dataList = [];
   attendanceInquriy: any;
   constructor(private attendancerecorderService: AttendancerecorderService) {
     monkeyPatchChartJsTooltip();
@@ -30,6 +31,9 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.attendancerecorderService.getProductList().subscribe((response) => {
+      this.dataList = response;
+    })
     this.attendancerecorderService.getAttendanceInquiry().subscribe((response) => {
       this.attendanceInquriy = response;
       this.totalCount = response.total;
