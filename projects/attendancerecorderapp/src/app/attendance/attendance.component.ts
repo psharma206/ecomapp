@@ -114,10 +114,11 @@ const ELEMENT_DATA = [
   ]
 })
 export class AttendanceComponent implements OnInit {
-  columnsToDisplay = ['name','designation', 'isAttendanceRecorded', 'firstName', 'middleName', 'lastName', 'city', 'state'];
+  columnsToDisplay = ['name', 'designation', 'isAttendanceRecorded', 'firstName', 'middleName', 'lastName', 'city', 'state'];
   totalCount = 0;
   dataSource: MatTableDataSource<PeriodicElement>;
   data = ELEMENT_DATA;
+  dataList = [];
   expandedElement: any;
   searchValue = '';
 
@@ -127,18 +128,19 @@ export class AttendanceComponent implements OnInit {
 
   }
 
-  submitAttendance(row: PeriodicElement) {
+  submitAttendance(row: any) {
     this.router.navigate(['/attendance/esignature', row.attendanceId]);
   }
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      let isExternalUser = (params['center'] != undefined && params['center'] != null) ? 'true': 'false';
+      let isExternalUser = (params['center'] != undefined && params['center'] != null) ? 'true' : 'false';
       window.sessionStorage.setItem('isExternalUser', isExternalUser);
     });
 
-   
+
     this.attendancerecorderService.getProductList().subscribe((response) => {
       this.dataSource = new MatTableDataSource(response);
+      this.dataList = response;
       this.totalCount = response.length;
     })
   }

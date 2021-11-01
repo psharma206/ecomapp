@@ -1,4 +1,107 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~bootstrap/dist/css/bootstrap.min.css";
-@import '~ngx-toastr/toastr';
+@import "~ngx-toastr/toastr";
+@import "./assets/css/tailwind.dev.css";
+
+@font-face {
+    font-family: "Khand";
+    src: local("Khand"), url(/assets/font/Khand-Regular/khand/Khand-Regular.ttf) format("ttf");
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: "";
+}
+body {
+    font-family: "Khand", Arial, Helvetica, sans-serif;
+    background-image: url("/assets/img/bg.jpg");
+    background-repeat: repeat;
+}
+header {
+    background-image: url("/assets/img/header_bg4.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+table {
+    width: 100%;
+}
+
+tr.example-detail-row {
+    height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+    background: #f5f5f5;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+}
+
+.example-element-row td {
+    border-bottom-width: 0;
+}
+
+.example-element-detail {
+    overflow: hidden;
+    display: flex;
+}
+
+.example-element-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+}
+
+.example-element-symbol {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+}
+
+.example-element-description {
+    padding: 16px;
+}
+
+.example-element-description-attribution {
+    opacity: 0.5;
+}
+
+@font-face {
+    font-family: "Khand";
+    src: local("Khand"), url(/assets/font/Khand-Regular/khand/Khand-Regular.ttf) format("ttf");
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: "";
+}
+body {
+    font-family: "Khand", Arial, Helvetica, sans-serif;
+    background-image: url("/assets/img/bg.jpg");
+    background-repeat: repeat;
+}
+header {
+    background-image: url("/assets/img/header_bg4.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+.id-card {
+    background-image: url("/assets/img/header_bg4.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+.id-card-body {
+    background-image: url("/assets/img/bg.jpg");
+    background-repeat: repeat;
+}

@@ -68,16 +68,16 @@ export class RecordsignatureComponent implements OnInit {
     console.log('begin drawing');
   }
   submitAttendance() {
-    if (this.isExternal && this.centerSelectedValue == '') {
-      this.messageService.Error('Please select center');
-      return false;
-    }
+    // if (this.isExternal && this.centerSelectedValue == '') {
+    //   this.messageService.Error('Please select center');
+    //   return false;
+    // }
     var esign = this.signaturePad.toData();
     if (esign == null || esign.length <= 0) {
       this.messageService.Error('Please enter signature');
       return false;
     }
-    this.attendanceRecord.city = this.centerSelectedValue;
+    // this.attendanceRecord.city = this.centerSelectedValue;
 
     this.attendanceRecord.isAttendanceRecorded = true;
 
