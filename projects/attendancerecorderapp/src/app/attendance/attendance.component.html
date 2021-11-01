@@ -1,5 +1,32 @@
-
-<div class="flex flex-col min-h-screen text-gray-900 bg-opacity-50" >
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Shubh Rohilla">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/tailwind.dev.css">
+    <style>
+        @font-face {
+            font-family: "Khand";
+            src: local("Khand"),
+            url(./assets/font/Khand-Regular/khand/Khand-Regular.ttf) format("ttf");
+        }
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            text-indent: 1px;
+            text-overflow: '';
+        }
+        body{
+            font-family: 'Khand', Arial, Helvetica, sans-serif; background-image: url('./assets/img/bg.jpg'); background-repeat:repeat;
+        }
+        header{
+            background-image: url('./assets/img/header_bg4.jpg'); background-size: cover; background-position: top; background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-gray-900 bg-opacity-50" >
 
     <header style="background-color: #ED6009; color: #450000">
         <div class="meeting-heading w-full h-full">
@@ -99,10 +126,13 @@
 
     </main>
 
-</div>
+    <script>
+        var form = document.getElementById("main-form");
 
-
-
+        document.getElementById("submit-main-form").addEventListener("click", function () {
+            form.submit();
+        });
+    </script>
 
 
 <div class="container">
@@ -179,3 +209,6 @@
     </div>
   </div>
 </div>
+  
+  </body>
+</html>
