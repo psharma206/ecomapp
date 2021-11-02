@@ -62,7 +62,7 @@ export class DashboardComponent implements OnInit {
   }
   
   getStateWisePresentCount(name: string){
-  lett stateDataCount  = 0;
+  let stateDataCount  = 0;
     let stateData = this.attendanceInquriy.list.filter(
       state => state.name.toLowerCase() === name.toLowerCase());
     if(stateData && stateData.count){
