@@ -54,7 +54,9 @@ export class DashboardComponent implements OnInit {
     setInterval(function () {
       vm.attendancerecorderService.getAttendanceInquiry().subscribe((response) => {
         vm.attendanceInquriy = response;
+        
         vm.totalCount = response.total;
+        vm.processResponseTotalCount(vm);
         vm.processResponse(vm);
       })
     }, 100000);
