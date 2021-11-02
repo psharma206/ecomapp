@@ -1,0 +1,23 @@
+@font-face {
+            font-family: "Khand";
+            src: local("Khand"),
+            url(/assets/font/Khand-Regular/khand/Khand-Regular.ttf) format("ttf");
+        }
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            text-indent: 1px;
+            text-overflow: '';
+        }
+        body{
+            font-family: 'Khand', Arial, Helvetica, sans-serif; 
+        }
+        header{
+            background-image: url('/assets/img/header_bg4.jpg'); background-size: cover; background-position: top; background-repeat: no-repeat;
+        }
+        .id-card{
+            background-image: url('/assets/img/header_bg4.jpg'); background-size: cover; background-position: top; background-repeat: no-repeat;
+        }
+        .id-card-body{
+            background-image: url('/assets/img/bg.jpg'); background-repeat:repeat;
+        }
