@@ -5,8 +5,8 @@
 @import "./assets/css/tailwind.dev.css";
 
 @font-face {
-    font-family: "Khand";
-    src: local("Khand"), url(/assets/font/Khand-Regular/khand/Khand-Regular.ttf) format("ttf");
+    font-family: "Khand" !important;
+    src: local("Khand"), url(/assets/font/Khand-Regular/khand/Khand-Regular.ttf) format("ttf") !important;
 }
 select {
     -webkit-appearance: none;
@@ -15,9 +15,9 @@ select {
     text-overflow: "";
 }
 body {
-    font-family: "Khand", Arial, Helvetica, sans-serif;
-    background-image: url("/assets/img/bg.jpg");
-    background-repeat: repeat;
+    font-family: "Khand", Arial, Helvetica, sans-serif ;!important;
+    background-image: url("/assets/img/bg.jpg") !important;
+    background-repeat: repeat !important;
 }
 header {
     background-image: url("/assets/img/header_bg4.jpg");
@@ -75,8 +75,8 @@ tr.example-element-row:not(.example-expanded-row):active {
 }
 
 @font-face {
-    font-family: "Khand";
-    src: local("Khand"), url(/assets/font/Khand-Regular/khand/Khand-Regular.ttf) format("ttf");
+    font-family: "Khand" !important;
+    src: local("Khand"), url(/assets/font/Khand-Regular/khand/Khand-Regular.ttf) format("ttf") !important;
 }
 select {
     -webkit-appearance: none;
@@ -85,9 +85,9 @@ select {
     text-overflow: "";
 }
 body {
-    font-family: "Khand", Arial, Helvetica, sans-serif;
-    background-image: url("/assets/img/bg.jpg");
-    background-repeat: repeat;
+    font-family: "Khand", Arial, Helvetica, sans-serif !important;
+    background-image: url("/assets/img/bg.jpg") !important;
+    background-repeat: repeat !important;
 }
 header {
     background-image: url("/assets/img/header_bg4.jpg");
