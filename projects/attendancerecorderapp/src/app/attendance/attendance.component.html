@@ -48,7 +48,7 @@
           <div class="input-group flex-grow relative">
             <input type="text" name="name" id="name" placeholder="Search by Name..."
               class="w-full px-7 pt-6 pb-4 text-3xl border-2 border-gray-400 hover:border-gray-800 transition-all duration-100 rounded-full bg-white outline-none cursor-pointer font-bold"
-              autocomplete="off">
+              autocomplete="off" [(ngModel)]="searchValue">
 
             <svg id="submit-main-form"
               class="absolute top-0 right-0 h-12 mt-3.5 mr-6 svg-inline--fa fa-search fa-w-16 fa-9x cursor-pointer hover:text-yellow-600"
@@ -61,14 +61,14 @@
 
           </div>
 
-          <button type="submit"
-            class="hidden lg:block px-12 pt-4 pb-2 text-3xl bg-red-800 hover:bg-red-900 text-white border-2 border-red-800 hover:border-red-900 transition-all duration-100 rounded-full outline-none cursor-pointer font-semibold hover:shadow-lg active:bg-red-700">Search</button>
+          <!-- <button type="submit"
+            class="hidden lg:block px-12 pt-4 pb-2 text-3xl bg-red-800 hover:bg-red-900 text-white border-2 border-red-800 hover:border-red-900 transition-all duration-100 rounded-full outline-none cursor-pointer font-semibold hover:shadow-lg active:bg-red-700">Search</button> -->
         </div>
 
       </form>
 
       <ul class="list-none mt-14 space-y-10">
-        <li *ngFor="let item of dataList"
+        <li *ngFor="let item of dataList | searchBy: 'name': searchValue"
           class="p-2.5 flex flex-col xl:flex-row items-center justify-between border-2 border-gray-400 hover:border-gray-800 bg-white rounded-3xl">
           <div class="flex items-center justify-center px-6 py-2">
             <div class="h-28 w-28 rounded-full overflow-hidden">
