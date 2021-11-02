@@ -57,16 +57,18 @@ export class DashboardComponent implements OnInit {
         vm.totalCount = response.total;
         vm.processResponse(vm);
       })
-    }, 10000);
+    }, 100000);
 
   }
   
   getStateWisePresentCount(name: string){
-  
+  lett stateDataCount  = 0;
     let stateData = this.attendanceInquriy.list.filter(
-      state => state.name === name);
-    
-  return stateData.count;
+      state => state.name.toLowerCase() === name.toLowerCase());
+    if(stateData && stateData.count){
+      stateDataCount = stateData.count;
+    }
+  return stateDataCount;
 }
   
 processResponseTotalCount(vm) {
