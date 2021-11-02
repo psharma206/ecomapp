@@ -46,7 +46,7 @@
             </div> -->
         <div class="search-name w-4/5 flex space-x-6">
           <div class="input-group flex-grow relative">
-            <input type="text" name="name" id="name" placeholder="Search by Name..."
+            <input type="text" name="name" id="name"  #filter (keyup)="applyFilter($event.target.value)" placeholder="Search by Name..."
               class="w-full px-7 pt-6 pb-4 text-3xl border-2 border-gray-400 hover:border-gray-800 transition-all duration-100 rounded-full bg-white outline-none cursor-pointer font-bold"
               autocomplete="off" [(ngModel)]="searchValue">
 
