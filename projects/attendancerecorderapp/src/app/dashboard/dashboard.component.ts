@@ -65,8 +65,8 @@ export class DashboardComponent implements OnInit {
   let stateDataCount  = 0;
     let stateData = this.attendanceInquriy.list.filter(
       state => state.name.toLowerCase() === name.toLowerCase());
-    if(stateData && stateData.count){
-      stateDataCount = stateData.count;
+    if(stateData && stateData[0] && stateData[0].count){
+      stateDataCount = stateData[0].count;
     }
   return stateDataCount;
 }
